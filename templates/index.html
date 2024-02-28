@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potato Leaf Prediction</title>
+    <link rel="stylesheet" href="../static/css/test-index.css">
+</head>
+<body>
+    <h1>Potato Leaf Diagnosis</h1>
+    <div id="test-form">
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div class="input-group">
+                <input id="file-input" type="file" name="file" class="form-control" aria-describedby="basic-addon2" required />
+                <div class="input-group-button">
+                    <button class="input-button" type="submit">Predict</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="image-container">
+            <div class="image-wrapper">
+                {% if input_img %}
+                <img id='upload-img' src='{{ url_for('static', filename='uploads/'+input_img) }}' alt="Uploaded Image">
+                {% endif %}
+            </div>
+            <div class="image-wrapper">
+                {% if pred_img %}
+                <img id='pred-img' src="{{ pred_img }}" alt='Predicted Result'/>
+                {% endif %}
+            </div>
+        </div>
+</body>
+</html>
