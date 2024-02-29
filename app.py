@@ -10,10 +10,9 @@ import time
 app = Flask(__name__)
 app.static_folder = 'static'
 
-# Load your pre-trained model
 model = tf.keras.models.load_model("models/potato_mobilenetv2_model.h5")
 
-# Define the upload directory
+# upload directory
 app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
@@ -34,7 +33,7 @@ def home():
 def predict(input_img):
     class_names = ['Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy']
 
-    # Load and preprocess the image
+    # Load and preprocess image
     img_path = os.path.join(app.config['UPLOAD_FOLDER'], input_img)
 
     start_time = time.time()
@@ -46,7 +45,6 @@ def predict(input_img):
 
     prediction_output = model.predict(my_image)
 
-    # Plot the predictions
     fig = plt.figure(figsize=(7, 4))
     plt.barh(class_names, prediction_output[0], color='lightgray', edgecolor='red', linewidth=1, height=0.5)
 
