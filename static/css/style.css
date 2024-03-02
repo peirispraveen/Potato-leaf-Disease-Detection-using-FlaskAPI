@@ -1,0 +1,149 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensures the body fills the entire viewport height */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #3498db;
+  color: #fff;
+  height: 100vh; /* Set header height to 100% of viewport height */
+}
+
+#logo-img {
+  max-width: 550px;
+  max-height: 680px;
+  padding-left: 50px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  padding-right: 120px;
+}
+
+main {
+  padding: 50px; /* Adjust padding to maintain content within viewport */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically within the body */
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+nav a:hover {
+  background-color: #e0e0e0;
+}
+
+.explanation {
+  text-align: center;
+}
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.upload h2 {
+  font-size: 20px;
+}
+
+#file-input {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.results h2 {
+  font-size: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+}
+
+.image-wrapper {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#upload-img,
+#pred-img {
+  max-width: 100%;
+}
+
+#prediction-text {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+  header, nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    display: block;
+  }
+
+  .upload, .results {
+    align-items: flex-start;
+  }
+
+  .image-container {
+    flex-direction: column;
+  }
+}

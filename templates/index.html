@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Potato Leaf Prediction</title>
-    <link rel="stylesheet" href="../static/css/test-index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Potato Leaf Disease Prediction</title>
+  <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    <h1>Potato Leaf Diagnosis</h1>
-    <div id="container1">
-        <div id="test-form">
-            <form action="/" method="post" enctype="multipart/form-data">
-                <div class="input-group">
-                    <div id="form1">
-                        <input id="file-input" type="file" name="file" class="form-control" aria-describedby="basic-addon2" required />
-                    </div>
-                    <div class="input-group-button">
-                        <button class="input-button" type="submit">Predict</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="image-container">
-                <div class="image-wrapper test-flex">
-                    {% if input_img %}
-                    <img id='upload-img' src='{{ url_for('static', filename='uploads/'+input_img) }}' alt="Uploaded Image">
-                    {% endif %}
-                </div>
-                <div class="image-wrapper test-flex">
-                    {% if pred_img %}
-                    <img id='pred-img' src="{{ pred_img }}" alt='Predicted Result'/>
-                    {% endif %}
-                </div>
-        </div>
-    </div>
+  <header>
+    <img src="../static/images/cropguard-high-resolution-logo.png" alt="CropGuard Logo" id="logo-img">
+    <h1>Potato Leaf Disease Prediction</h1>
+  </header>
+  <main>
+    <section class="explanation">
+      <p>This tool helps you identify potential diseases in your potato plants by analyzing uploaded leaf images.</p>
+    </section>
+    <section class="upload">
+      <h2>Upload a Leaf Image</h2>
+      <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file-input" accept="image/*" required>
+        <button type="submit" class="input-button">Predict</button>
+      </form>
+    </section>
+    <section class="results">
+      <h2>Results</h2>
+      <div class="image-container">
+          <div class="image-wrapper">
+              {% if input_img %}
+                  <img id='upload-img' src='{{ url_for('static', filename='uploads/'+input_img) }}' alt="Uploaded Image" class="img-fluid">
+              {% endif %}
+          </div>
+          <div class="image-wrapper">
+              {% if pred_img %}
+                  <img id='pred-img' src="{{ pred_img }}" alt='Predicted Result' class="img-fluid"/>
+              {% endif %}
+          </div>
+      </div>
+      <p id="prediction-text"></p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; AI & DS 2024</p>
+  </footer>
 </body>
 </html>
