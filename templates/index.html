@@ -3,12 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Potato Leaf Disease Prediction</title>
+  <title>Diagnosis</title>
   <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="icon" type="image/x-icon" href="../static/images/favicon1transparent.png">
 </head>
 <body>
+  <nav>
+    <a href="index.html">
+      <img src="../static/images/favicon1transparent.png" alt="CropGuard Logo" id="logo-nav">
+    </a>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html">Model</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
   <header>
-    <img src="../static/images/cropguard-high-resolution-logo.png" alt="CropGuard Logo" id="logo-img">
+    <img src="../static/images/logo1.png" alt="CropGuard Logo" id="logo-img">
     <h1>Potato Leaf Disease Prediction</h1>
   </header>
   <main>
@@ -25,16 +36,16 @@
     <section class="results">
       <h2>Results</h2>
       <div class="image-container">
-          <div class="image-wrapper">
-              {% if input_img %}
-                  <img id='upload-img' src='{{ url_for('static', filename='uploads/'+input_img) }}' alt="Uploaded Image" class="img-fluid">
-              {% endif %}
-          </div>
-          <div class="image-wrapper">
-              {% if pred_img %}
-                  <img id='pred-img' src="{{ pred_img }}" alt='Predicted Result' class="img-fluid"/>
-              {% endif %}
-          </div>
+        <div class="image-wrapper">
+          {% if input_img %}
+            <img id='upload-img' src='{{ url_for('static', filename='uploads/'+input_img) }}' alt="Uploaded Image" class="img-fluid">
+          {% endif %}
+        </div>
+        <div class="image-wrapper">
+          {% if pred_img %}
+            <img id='pred-img' src="{{ pred_img }}" alt='Predicted Result' class="img-fluid"/>
+          {% endif %}
+        </div>
       </div>
       <p id="prediction-text"></p>
     </section>
