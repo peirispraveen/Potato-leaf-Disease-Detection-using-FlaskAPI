@@ -51,13 +51,13 @@ header {
 }
 
 #logo-nav {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 35px;
+  max-height: 35px;
   border-color: #3498db;
 }
 
 #logo-nav:hover {
-  background-color: inherit;
+  background-color: #3498db;
 }
 
 h1 {
