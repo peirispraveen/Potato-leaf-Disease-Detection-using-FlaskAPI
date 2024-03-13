@@ -10,7 +10,7 @@ import time
 app = Flask(__name__)
 app.static_folder = 'static'
 
-model = tf.keras.models.load_model("models/potato_mobilenetv2_model.h5")
+model = tf.keras.models.load_model("models/potato_diagnosis.h5")
 
 # upload directory
 app.config['UPLOAD_FOLDER'] = 'static/uploads/'
